@@ -1,4 +1,4 @@
-#!usr/bin/python
+#!/usr/bin/python
 def print_matrix_integer(matrix=[[]]):
      if matrix:
         for elems in matrix:
