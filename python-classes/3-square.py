@@ -1,36 +1,25 @@
 #!/usr/bin/python3
-class Square:
-    """Square Class
+"""
+Write a class Square that defines a square by: (based on 2-square.py)
 
-    A Square Class
+Private instance attribute: size
+Instantiation with optional size: def __init__(self, size=0):
+size must be an integer, otherwise raise a TypeError exception with a message
+if size is less than 0, raise a ValueError exception with a message
+Public instance method: def area(self): that returns the current square area
+You are not allowed to import any module
+"""
 
-    """
 
+class Square():
+    """This class defines a square with it's size initialized"""
     def __init__(self, size=0):
-        """__init__
-
-        The __init__ method initializes the size value of the square.
-
-        Attributes:
-            size (:obj:`int`, optional): The size of the square.
-
-        Raises:
-            TypeError: If `size` type is not `int`.
-
-            ValueError: If `size` is less than `0`.
-
-        """
-
         if type(size) is not int:
-            raise TypeError('size must be an integer')
-
+            raise TypeError("size must be an integer")
         if size < 0:
-            raise ValueError('size must be >= 0')
-
+            raise ValueError("size must be >= 0")
         self.__size = size
 
     def area(self):
-        """Returns the current square area
-
-        """
-        return self.__size ** 2
+        self.__area = self.__size ** 2
+        return self.__area
