@@ -1,14 +1,14 @@
 #!/usr/bin/python3
-lookup = __import__('0-lookup').lookup
+"""
+Write a function that returns the list
+    of available attributes and methods of an object:
 
-class MyClass1(object):
-    pass
+Prototype: def lookup(obj):
+Returns a list object
+You are not allowed to import any module
+"""
 
-class MyClass2(object):
-    my_attr1 = 3
-    def my_meth(self):
-        pass
 
-print(lookup(MyClass1))
-print(lookup(MyClass2))
-print(lookup(int))
+def lookup(obj):
+    """Lookup functions returns a list casted dir() of the object"""
+    return list(dir(obj))
