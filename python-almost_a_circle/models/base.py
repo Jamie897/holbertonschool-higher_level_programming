@@ -64,3 +64,4 @@ class Base:
         else:
             ret_list = list_dictionaries
         return json.dumps(ret_list)
+    
