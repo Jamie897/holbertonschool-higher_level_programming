@@ -63,4 +63,4 @@ class Base:
             ret_list.append(list_dictionaries)
         else:
             ret_list = list_dictionaries
-                 return json.dumps(ret_list) 
+        return json.dumps(ret_list)
