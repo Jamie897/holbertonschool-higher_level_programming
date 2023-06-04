@@ -170,4 +170,3 @@ class Base():
                 t.left(90)
             t.penup()
         t.Screen().exitonclick()
-        
