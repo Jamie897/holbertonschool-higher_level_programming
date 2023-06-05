@@ -2,7 +2,7 @@
 """This is the base.py unittest module."""
 from unittest import TestCase
 import os
-
+import unittest
 from models.base import Base
 from models.rectangle import Rectangle
 from models.square import Square
