@@ -1,31 +1,26 @@
 #!/usr/bin/python3
-"""This is the Base module.
-
-Contains the Base class which will be the
-“base” of all other classes in this project.
-"""
+"""Defines a base model class."""
 import json
 import csv
 import turtle
 
 
-class Base():
-    """This class will be the “base” of all other classes in this project.
+class Base:
+    """Represent the base model.
 
-    The goal is to manage id attribute in all our future classes
-    and to avoid duplicating the same code and same errors.
+    Represents the "base" for all other classes in project 0x0C*.
 
     Attributes:
-        __nb_objects (int): the number of created Base objects.
+        __nb_objects (int): The number of instantiated Bases.
     """
 
     __nb_objects = 0
 
     def __init__(self, id=None):
-        """Initializes the default attributes of the Base object.
+        """Initialize a new Base.
 
         Args:
-            id (int): the identifier of the Base object.
+            id (int): The identity of the new Base.
         """
         if id is not None:
             self.id = id
@@ -35,28 +30,29 @@ class Base():
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        """Returns the JSON string representation of list_dictionaries.
+        """Return the JSON serialization of a list of dicts.
 
         Args:
-            list_dictionaries (list): a list of dictionaries.
+            list_dictionaries (list): A list of dictionaries.
         """
-        if list_dictionaries is None or len(list_dictionaries) == 0:
+        if list_dictionaries is None or list_dictionaries == []:
             return "[]"
         return json.dumps(list_dictionaries)
 
     @classmethod
     def save_to_file(cls, list_objs):
-        """Writes the JSON string representation of list_objs to a file.
+        """Write the JSON serialization of a list of objects to a file.
 
         Args:
-            list_objs (list): a list of objects.
+            list_objs (list): A list of inherited Base instances.
         """
-        lst = []
-        if list_objs is not None and len(list_objs) > 0:
-            for obj in list_objs:
-                lst.append(obj.to_dictionary())
-        with open(cls.__name__ + ".json", 'w') as f:
-            f.write(Base.to_json_string(lst))
+        filename = cls.__name__ + ".json"
+        with open(filename, "w") as jsonfile:
+            if list_objs is None:
+                jsonfile.write("[]")
+            else:
+                list_dicts = [o.to_dictionary() for o in list_objs]
+                jsonfile.write(Base.to_json_string(list_dicts))
 
     @staticmethod
     def from_json_string(json_string):
