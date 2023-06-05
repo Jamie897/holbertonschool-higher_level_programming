@@ -127,4 +127,3 @@ class TestBaseClass(unittest.TestCase):
 
     def test_from_json_to_str_2(self):
         self.assertEqual(Base.from_json_string(None), [])
-    
