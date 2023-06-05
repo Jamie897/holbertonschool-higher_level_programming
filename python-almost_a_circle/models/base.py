@@ -21,7 +21,7 @@ class Base():
 
     __nb_objects = 0
 
-    def __init__
+    def __init__(self, id=None):
         """Initializes the default attributes of the Base object.
 
         Args:
