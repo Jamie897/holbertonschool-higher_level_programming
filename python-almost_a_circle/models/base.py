@@ -23,6 +23,7 @@ class Base():
             if value < min:
                 raise ValueError("{} must be >= {}".format(val_name, min))
         return value
+    
     @staticmethod
     def to_json_string(list_dictionaries=[]):
         """get JSON strings"""
