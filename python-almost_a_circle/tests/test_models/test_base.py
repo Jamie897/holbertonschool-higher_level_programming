@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 # test_base.py
-# Carlos Barros <1543@holbertonschool.com>
 """Defines unittests for base.py."""
 import unittest
 import os
