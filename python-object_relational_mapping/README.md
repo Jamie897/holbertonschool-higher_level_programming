@@ -1,1 +1,0 @@
-Python Relational Object Mapping
