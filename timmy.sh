@@ -1,0 +1,5 @@
+#!/bin/bash
+
+HOST="3d22d2370117.ae068b5a.hbtn-cod.io"
+USERNAME="3d22d2370117"
+PASSWORD="3e0fc51b794d2b5943b9"
